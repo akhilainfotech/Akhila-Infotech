@@ -44,7 +44,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       >
         {toasts.map(toast => {
           const typeClasses = {
-            success: 'bg-[#0f2147] text-white border-cyan-400 shadow-cyan-950/20',
+            success: 'bg-[#00184a] text-white border-[#00d2ff] shadow-blue-950/40',
             error: 'bg-red-950 text-white border-red-500 shadow-red-950/20',
             info: 'bg-slate-900 text-white border-slate-700 shadow-slate-950/20',
           }[toast.type];

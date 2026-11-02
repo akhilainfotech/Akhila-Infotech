@@ -140,24 +140,24 @@ export default function SecurityPortalModal({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div onClick={onClose} className="fixed inset-0 bg-slate-950/85 backdrop-blur-md" />
-      <div className="relative w-full max-w-2xl rounded-2xl bg-white border border-slate-200 shadow-2xl p-6 sm:p-8 z-10 max-h-[92vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-2xl rounded-2xl bg-[#001242] border border-[#002e8a] shadow-2xl shadow-blue-950/80 text-white p-6 sm:p-8 z-10 max-h-[92vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div className="flex items-center justify-between pb-4 border-b border-[#002466]">
           <div className="flex items-center gap-3">
             <AiLogo className="w-10 h-10" />
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-lg font-bold text-slate-900">Corporate Email &amp; Security Portal</h3>
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                <h3 className="text-lg font-bold text-white">Corporate Email &amp; Security Portal</h3>
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800/60">
                   2FA Active
                 </span>
               </div>
-              <p className="text-xs text-slate-500">Akhila Infotech Authentication &amp; Mail Integrity Suite</p>
+              <p className="text-xs text-slate-300">Akhila Infotech Authentication &amp; Mail Integrity Suite</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#001c54] transition"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -165,13 +165,13 @@ export default function SecurityPortalModal({
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex border-b border-slate-200 mt-4 text-xs font-bold">
+        <div className="flex border-b border-[#002466] mt-4 text-xs font-bold">
           <button
             onClick={() => setActiveTab('login')}
             className={`px-4 py-2.5 border-b-2 flex items-center gap-1.5 transition ${
               activeTab === 'login'
-                ? 'border-[#0f2147] text-[#0f2147]'
-                : 'border-transparent text-slate-500 hover:text-slate-800'
+                ? 'border-[#00d2ff] text-[#00d2ff]'
+                : 'border-transparent text-slate-400 hover:text-[#00d2ff]'
             }`}
           >
             <LogIn className="w-3.5 h-3.5" />
@@ -184,8 +184,8 @@ export default function SecurityPortalModal({
             }}
             className={`px-4 py-2.5 border-b-2 flex items-center gap-1.5 transition ${
               activeTab === 'email-check'
-                ? 'border-[#0f2147] text-[#0f2147]'
-                : 'border-transparent text-slate-500 hover:text-slate-800'
+                ? 'border-[#00d2ff] text-[#00d2ff]'
+                : 'border-transparent text-slate-400 hover:text-[#00d2ff]'
             }`}
           >
             <Search className="w-3.5 h-3.5" />
@@ -195,8 +195,8 @@ export default function SecurityPortalModal({
             onClick={() => setActiveTab('session')}
             className={`px-4 py-2.5 border-b-2 flex items-center gap-1.5 transition ${
               activeTab === 'session'
-                ? 'border-[#0f2147] text-[#0f2147]'
-                : 'border-transparent text-slate-500 hover:text-slate-800'
+                ? 'border-[#00d2ff] text-[#00d2ff]'
+                : 'border-transparent text-slate-400 hover:text-[#00d2ff]'
             }`}
           >
             <Activity className="w-3.5 h-3.5" />
@@ -207,14 +207,14 @@ export default function SecurityPortalModal({
         {/* TAB 1: Corporate Email Login */}
         {activeTab === 'login' && (
           <div className="py-5 space-y-4">
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
+            <div className="p-3.5 rounded-xl bg-slate-50 border border-[#002466] text-xs text-slate-300">
               <strong>Single Sign-On Notice:</strong> Authorized for Akhila Infotech team and invited client
               enterprise contacts. Principal hours: 9:00 AM – 6:00 PM IST.
             </div>
 
             <form onSubmit={handleLoginSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold uppercase text-slate-700 mb-1">
+                <label className="block text-xs font-bold uppercase text-slate-200 mb-1">
                   Corporate Email Address
                 </label>
                 <div className="relative">
@@ -224,7 +224,7 @@ export default function SecurityPortalModal({
                     value={loginEmail}
                     onChange={e => setLoginEmail(e.target.value)}
                     placeholder="consultant@akhilainfotech.com"
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0f2147] transition"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-white placeholder-slate-400 text-sm focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
                   />
                   <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                 </div>
@@ -232,7 +232,7 @@ export default function SecurityPortalModal({
 
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="block text-xs font-bold uppercase text-slate-700">
+                  <label className="block text-xs font-bold uppercase text-slate-200">
                     Security Passcode / Key
                   </label>
                   <button
@@ -240,7 +240,7 @@ export default function SecurityPortalModal({
                     onClick={() =>
                       showToast('Password reset link sent to registered admin mailbox.', 'info')
                     }
-                    className="text-[11px] text-cyan-700 hover:underline"
+                    className="text-[11px] text-[#00d2ff] hover:underline"
                   >
                     Forgot?
                   </button>
@@ -252,20 +252,20 @@ export default function SecurityPortalModal({
                     value={loginPass}
                     onChange={e => setLoginPass(e.target.value)}
                     placeholder="••••••••••••"
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0f2147] transition"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-white placeholder-slate-400 text-sm focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
                   />
                   <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                 </div>
               </div>
 
               {/* 2FA OTP Field */}
-              <div className="p-3.5 rounded-xl bg-cyan-50/70 border border-cyan-200/80 space-y-2">
+              <div className="p-3.5 rounded-xl bg-[#001c54]/80 border border-[#0055ff]/40 space-y-2">
                 <div className="flex items-center justify-between text-xs">
-                  <label className="font-bold text-cyan-950 flex items-center gap-1.5">
-                    <Smartphone className="w-3.5 h-3.5 text-cyan-700" />
+                  <label className="font-bold text-white flex items-center gap-1.5">
+                    <Smartphone className="w-3.5 h-3.5 text-[#00d2ff]" />
                     2-Factor Authenticator Code (TOTP)
                   </label>
-                  <span className="text-[10px] text-cyan-800 font-mono">6-Digit Key</span>
+                  <span className="text-[10px] text-[#38bdf8] font-mono">6-Digit Key</span>
                 </div>
                 <input
                   type="text"
@@ -273,14 +273,14 @@ export default function SecurityPortalModal({
                   value={otpCode}
                   onChange={e => setOtpCode(e.target.value)}
                   placeholder="e.g. 582914"
-                  className="w-full px-3 py-2 rounded-lg bg-white border border-cyan-300 text-xs font-mono tracking-widest text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-600"
+                  className="w-full px-3 py-2 rounded-lg bg-[#000d2b] border border-[#0055ff]/60 text-xs font-mono tracking-widest text-[#00d2ff] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isAuthenticating}
-                className="w-full py-3 rounded-xl font-bold text-xs text-white bg-[#0f2147] hover:bg-slate-900 transition flex items-center justify-center gap-2 shadow-md shadow-[#0f2147]/20 disabled:opacity-70"
+                className="w-full py-3 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-[#0055ff] to-[#0099ff] hover:from-[#0044ee] hover:to-[#0088ee] transition flex items-center justify-center gap-2 shadow-md shadow-[#0055ff]/25 text-white disabled:opacity-70"
               >
                 {isAuthenticating ? (
                   <>
@@ -296,9 +296,15 @@ export default function SecurityPortalModal({
               </button>
             </form>
 
-            <div className="pt-2 flex items-center justify-between text-xs text-slate-500 border-t border-slate-100">
-              <span>Target Destination:</span>
-              <a href="/admin" className="font-mono text-cyan-700 hover:underline">
+            <div className="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-[#002466]">
+              <span>Corporate Mailbox:</span>
+              <a href="/mail" className="font-mono text-[#00d2ff] hover:underline font-bold flex items-center gap-1">
+                <span>Titan Webmail Login →</span>
+              </a>
+            </div>
+            <div className="pt-1 flex items-center justify-between text-xs text-slate-500">
+              <span>Admin Console:</span>
+              <a href="/admin" className="font-mono text-slate-400 hover:text-white hover:underline">
                 /admin console →
               </a>
             </div>
@@ -308,14 +314,14 @@ export default function SecurityPortalModal({
         {/* TAB 2: Email & Domain Integrity Inspector */}
         {activeTab === 'email-check' && (
           <div className="py-5 space-y-4">
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
+            <div className="p-3.5 rounded-xl bg-slate-50 border border-[#002466] text-xs text-slate-300">
               Inspect any corporate email address or enterprise domain for <strong>SPF alignment</strong>,{' '}
               <strong>DKIM signatures</strong>, <strong>DMARC policy (p=reject)</strong>, and{' '}
               <strong>MX mail exchanger redundancy</strong>.
             </div>
 
             <div className="space-y-3">
-              <label className="block text-xs font-bold uppercase text-slate-700">
+              <label className="block text-xs font-bold uppercase text-slate-200">
                 Email Address or Domain to Validate
               </label>
               <div className="flex gap-2">
@@ -325,7 +331,7 @@ export default function SecurityPortalModal({
                     value={checkInput}
                     onChange={e => setCheckInput(e.target.value)}
                     placeholder="user@domain.com or company.com"
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0f2147]"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-xs font-mono text-white placeholder-slate-400 focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff]"
                   />
                   <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                 </div>
@@ -333,7 +339,7 @@ export default function SecurityPortalModal({
                   type="button"
                   onClick={() => runDomainCheck()}
                   disabled={isInspecting}
-                  className="px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-cyan-700 hover:bg-cyan-800 transition flex items-center gap-1.5 shadow-sm"
+                  className="px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#0055ff] to-[#0099ff] hover:from-[#0044ee] hover:to-[#0088ee] transition flex items-center gap-1.5 shadow-sm"
                 >
                   {isInspecting ? (
                     <RefreshCw className="w-3.5 h-3.5 animate-spin" />
@@ -347,44 +353,44 @@ export default function SecurityPortalModal({
 
             {/* Inspection Output */}
             {isInspecting && (
-              <div className="p-6 text-center text-xs text-slate-500 bg-slate-50 rounded-xl border border-slate-200 animate-pulse">
+              <div className="p-6 text-center text-xs text-slate-500 bg-slate-50 rounded-xl border border-[#002466] animate-pulse">
                 Querying DNSSEC, MX, SPF, and DMARC records for <strong>{checkInput}</strong>...
               </div>
             )}
 
             {!isInspecting && inspectedDomain && (
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5 animate-in fade-in">
+              <div className="p-4 rounded-xl bg-slate-50 border border-[#002466] space-y-2.5 animate-in fade-in">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-xs text-slate-800 flex items-center gap-1.5">
+                  <span className="font-bold text-xs text-white flex items-center gap-1.5">
                     <Globe className="w-3.5 h-3.5 text-cyan-700" /> Domain Scope:
                   </span>
-                  <span className="font-mono text-xs font-bold text-[#0f2147]">{inspectedDomain}</span>
+                  <span className="font-mono text-xs font-bold text-[#00d2ff]">{inspectedDomain}</span>
                 </div>
 
                 {/* SPF */}
-                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-slate-200">
-                  <span className="text-slate-600">SPF Record (Sender Policy Framework):</span>
-                  <span className="font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded text-[10px]">
+                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-[#002466]">
+                  <span className="text-slate-300">SPF Record (Sender Policy Framework):</span>
+                  <span className="font-mono font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded text-[10px]">
                     v=spf1 ~all VALID
                   </span>
                 </div>
 
                 {/* DKIM */}
-                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-slate-200">
-                  <span className="text-slate-600">DKIM Signature (2048-bit RSA):</span>
-                  <span className="font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded text-[10px]">
+                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-[#002466]">
+                  <span className="text-slate-300">DKIM Signature (2048-bit RSA):</span>
+                  <span className="font-mono font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded text-[10px]">
                     ALIGNMENT OK
                   </span>
                 </div>
 
                 {/* DMARC */}
-                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-slate-200">
-                  <span className="text-slate-600">DMARC Policy Enforcement:</span>
+                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-[#002466]">
+                  <span className="text-slate-300">DMARC Policy Enforcement:</span>
                   <span
                     className={`font-mono font-bold ${
                       inspectedDomain.toLowerCase() === 'akhilainfotech.com'
-                        ? 'text-emerald-700 bg-emerald-100'
-                        : 'text-blue-700 bg-blue-100'
+                        ? 'text-emerald-300 bg-emerald-950/80 border border-emerald-800/60'
+                        : 'text-[#00d2ff] bg-[#001c54] border border-[#003899]'
                     } px-2 py-0.5 rounded text-[10px]`}
                   >
                     p=reject (STRICT)
@@ -392,29 +398,29 @@ export default function SecurityPortalModal({
                 </div>
 
                 {/* MX */}
-                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-slate-200">
-                  <span className="text-slate-600">MX Mail Exchangers:</span>
-                  <span className="font-mono text-slate-800 text-[11px]">Primary + Fallback Cluster OK</span>
+                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-[#002466]">
+                  <span className="text-slate-300">MX Mail Exchangers:</span>
+                  <span className="font-mono text-slate-200 text-[11px]">Primary + Fallback Cluster OK</span>
                 </div>
 
                 {/* DNSBL */}
-                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-slate-200">
-                  <span className="text-slate-600">Spamhaus / DNSBL Reputation:</span>
-                  <span className="font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded text-[10px]">
+                <div className="flex items-center justify-between text-xs pt-1.5 border-t border-[#002466]">
+                  <span className="text-slate-300">Spamhaus / DNSBL Reputation:</span>
+                  <span className="font-mono font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded text-[10px]">
                     0/48 BLACKLISTS
                   </span>
                 </div>
               </div>
             )}
 
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <div className="pt-3 border-t border-[#002466] flex items-center justify-between text-xs">
               <span className="text-slate-500">Need corporate email hardening?</span>
               <button
                 onClick={() => {
                   onClose();
                   onOpenConsultation('Zero-Trust Cybersecurity & Compliance');
                 }}
-                className="font-bold text-[#0f2147] hover:underline"
+                className="font-bold text-[#00d2ff] hover:underline font-bold"
               >
                 Request Advisory Blueprint →
               </button>
@@ -425,20 +431,20 @@ export default function SecurityPortalModal({
         {/* TAB 3: Session Telemetry */}
         {activeTab === 'session' && (
           <div className="py-5 space-y-4">
-            <div className="p-4 rounded-xl bg-slate-900 text-white space-y-3 font-mono text-xs">
-              <div className="flex justify-between items-center pb-2 border-b border-slate-800">
+            <div className="p-4 rounded-xl bg-[#000d2b] border border-[#002466] text-white space-y-3 font-mono text-xs">
+              <div className="flex justify-between items-center pb-2 border-b border-[#002466]">
                 <span className="text-slate-400">Node Hub:</span>
                 <span className="text-cyan-300">Hyderabad (17.3850° N, 78.4867° E)</span>
               </div>
-              <div className="flex justify-between items-center pb-2 border-b border-slate-800">
+              <div className="flex justify-between items-center pb-2 border-b border-[#002466]">
                 <span className="text-slate-400">Session Token:</span>
                 <span className="text-emerald-400">{sessionToken}</span>
               </div>
-              <div className="flex justify-between items-center pb-2 border-b border-slate-800">
+              <div className="flex justify-between items-center pb-2 border-b border-[#002466]">
                 <span className="text-slate-400">Cipher Suite:</span>
                 <span className="text-slate-200">TLS_AES_256_GCM_SHA384</span>
               </div>
-              <div className="flex justify-between items-center pb-2 border-b border-slate-800">
+              <div className="flex justify-between items-center pb-2 border-b border-[#002466]">
                 <span className="text-slate-400">Client Protocol:</span>
                 <span className="text-slate-200">HTTP/2 - Enforced</span>
               </div>
@@ -451,7 +457,7 @@ export default function SecurityPortalModal({
             <div className="flex gap-2">
               <button
                 onClick={rotateToken}
-                className="flex-1 py-2.5 rounded-xl text-xs font-bold border border-slate-300 hover:bg-slate-100 transition flex items-center justify-center gap-1.5"
+                className="flex-1 py-2.5 rounded-xl text-xs font-bold border border-[#002e8a] text-slate-200 hover:bg-[#001c54] transition flex items-center justify-center gap-1.5"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
                 <span>Rotate Nonce / Token</span>

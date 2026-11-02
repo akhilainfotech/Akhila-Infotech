@@ -78,9 +78,9 @@ export default function AdminPage() {
     : inquiries.filter(i => i.status.toLowerCase() === activeFilter);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-[#0f2147] selection:text-white">
+    <div className="min-h-screen bg-[#000d2e] text-slate-100 font-sans selection:bg-[#0055ff] selection:text-white">
       {/* Top Banner */}
-      <div className="bg-[#070f24] border-b border-slate-800 text-xs py-2 px-4 sm:px-8">
+      <div className="bg-[#000924] border-b border-[#002466] text-xs py-2 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 font-semibold border border-emerald-500/20">
@@ -107,7 +107,7 @@ export default function AdminPage() {
       </div>
 
       {/* Main Admin Header */}
-      <header className="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md sticky top-0 z-40">
+      <header className="border-b border-[#002466] bg-[#001242]/90 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3.5">
             <AiLogo className="w-10 h-10" />
@@ -125,7 +125,7 @@ export default function AdminPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/"
-              className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5"
+              className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#001c54] hover:bg-slate-700 text-slate-200 border border-[#002e8a] transition flex items-center gap-1.5"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Exit Console</span>
@@ -138,7 +138,7 @@ export default function AdminPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-8">
         {/* KPI Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div className="p-5 rounded-2xl bg-[#001242]/80 border border-[#002466]">
             <div className="flex items-center justify-between">
               <span className="text-xs text-slate-400 font-mono uppercase">Consultation Inquiries</span>
               <Mail className="w-4 h-4 text-cyan-400" />
@@ -150,7 +150,7 @@ export default function AdminPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div className="p-5 rounded-2xl bg-[#001242]/80 border border-[#002466]">
             <div className="flex items-center justify-between">
               <span className="text-xs text-slate-400 font-mono uppercase">Bot Traps Discarded</span>
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -159,7 +159,7 @@ export default function AdminPage() {
             <p className="text-[11px] text-slate-400 mt-1">Honeypot &amp; Rate-Limiting armed</p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div className="p-5 rounded-2xl bg-[#001242]/80 border border-[#002466]">
             <div className="flex items-center justify-between">
               <span className="text-xs text-slate-400 font-mono uppercase">Node SLA Availability</span>
               <Activity className="w-4 h-4 text-indigo-400" />
@@ -168,7 +168,7 @@ export default function AdminPage() {
             <p className="text-[11px] text-emerald-400 mt-1">Zero downtime recorded</p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div className="p-5 rounded-2xl bg-[#001242]/80 border border-[#002466]">
             <div className="flex items-center justify-between">
               <span className="text-xs text-slate-400 font-mono uppercase">Primary Hub</span>
               <MapPin className="w-4 h-4 text-amber-400" />
@@ -179,8 +179,8 @@ export default function AdminPage() {
         </div>
 
         {/* Inquiries Management Section */}
-        <div className="rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden">
-          <div className="p-5 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="rounded-2xl bg-[#001242]/80 border border-[#002466] overflow-hidden">
+          <div className="p-5 border-b border-[#002466] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h2 className="text-base font-bold text-white">Received Consultation Requests</h2>
               <p className="text-xs text-slate-400 mt-0.5">
@@ -196,8 +196,8 @@ export default function AdminPage() {
                 onClick={() => setActiveFilter('all')}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold transition ${
                   activeFilter === 'all'
-                    ? 'bg-[#0f2147] text-white border border-cyan-500/30'
-                    : 'bg-slate-800 text-slate-400 hover:text-white'
+                    ? 'bg-[#00184a] text-white border border-cyan-500/30'
+                    : 'bg-[#001c54] text-slate-400 hover:text-white'
                 }`}
               >
                 All
@@ -206,8 +206,8 @@ export default function AdminPage() {
                 onClick={() => setActiveFilter('new')}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold transition ${
                   activeFilter === 'new'
-                    ? 'bg-[#0f2147] text-white border border-cyan-500/30'
-                    : 'bg-slate-800 text-slate-400 hover:text-white'
+                    ? 'bg-[#00184a] text-white border border-cyan-500/30'
+                    : 'bg-[#001c54] text-slate-400 hover:text-white'
                 }`}
               >
                 New
@@ -216,8 +216,8 @@ export default function AdminPage() {
                 onClick={() => setActiveFilter('reviewed')}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold transition ${
                   activeFilter === 'reviewed'
-                    ? 'bg-[#0f2147] text-white border border-cyan-500/30'
-                    : 'bg-slate-800 text-slate-400 hover:text-white'
+                    ? 'bg-[#00184a] text-white border border-cyan-500/30'
+                    : 'bg-[#001c54] text-slate-400 hover:text-white'
                 }`}
               >
                 Reviewed
@@ -227,7 +227,7 @@ export default function AdminPage() {
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-slate-950/60 text-slate-400 font-mono text-[11px] uppercase border-b border-slate-800">
+              <thead className="bg-slate-950/60 text-slate-400 font-mono text-[11px] uppercase border-b border-[#002466]">
                 <tr>
                   <th className="px-5 py-3">Reference ID</th>
                   <th className="px-5 py-3">Client / Company</th>
@@ -239,7 +239,7 @@ export default function AdminPage() {
               </thead>
               <tbody className="divide-y divide-slate-800/60 text-slate-300">
                 {filteredInquiries.map(item => (
-                  <tr key={item.id} className="hover:bg-slate-800/40 transition-colors">
+                  <tr key={item.id} className="hover:bg-[#001c54]/40 transition-colors">
                     <td className="px-5 py-3.5 font-mono text-cyan-300 font-semibold">{item.id}</td>
                     <td className="px-5 py-3.5">
                       <div className="font-bold text-white">{item.name}</div>
@@ -253,7 +253,7 @@ export default function AdminPage() {
                         className={`inline-block px-2.5 py-0.5 rounded-full font-mono text-[10px] font-bold ${
                           item.status === 'NEW'
                             ? 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/30'
-                            : 'bg-slate-800 text-slate-400'
+                            : 'bg-[#001c54] text-slate-400'
                         }`}
                       >
                         {item.status}
@@ -268,8 +268,8 @@ export default function AdminPage() {
 
         {/* Security Event Stream & Telemetry */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div className="lg:col-span-7 rounded-2xl bg-slate-900/80 border border-slate-800 p-5">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+          <div className="lg:col-span-7 rounded-2xl bg-[#001242]/80 border border-[#002466] p-5">
+            <div className="flex items-center justify-between pb-4 border-b border-[#002466]">
               <h3 className="text-sm font-bold text-white flex items-center gap-2">
                 <Activity className="w-4 h-4 text-cyan-400" />
                 Live Security &amp; Audit Log
@@ -283,13 +283,13 @@ export default function AdminPage() {
               {securityEvents.map((ev, idx) => (
                 <div
                   key={idx}
-                  className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-start justify-between gap-3"
+                  className="p-3 rounded-xl bg-slate-950/70 border border-[#002466]/80 flex items-start justify-between gap-3"
                 >
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-2">
                       <span className="text-cyan-400 font-semibold">{ev.time}</span>
                       <span className="text-slate-500">•</span>
-                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#001c54] text-slate-300">
                         {ev.level}
                       </span>
                     </div>
@@ -302,8 +302,8 @@ export default function AdminPage() {
           </div>
 
           {/* Quick Admin Actions */}
-          <div className="lg:col-span-5 rounded-2xl bg-slate-900/80 border border-slate-800 p-5 space-y-4">
-            <h3 className="text-sm font-bold text-white flex items-center gap-2 pb-4 border-b border-slate-800">
+          <div className="lg:col-span-5 rounded-2xl bg-[#001242]/80 border border-[#002466] p-5 space-y-4">
+            <h3 className="text-sm font-bold text-white flex items-center gap-2 pb-4 border-b border-[#002466]">
               <Lock className="w-4 h-4 text-cyan-400" />
               Administrative Actions
             </h3>
@@ -311,7 +311,7 @@ export default function AdminPage() {
             <div className="space-y-2.5 text-xs">
               <button
                 onClick={() => alert('Initiating cryptographic key renewal for Hyderabad Edge nodes...')}
-                className="w-full text-left p-3 rounded-xl bg-slate-950 hover:bg-slate-800/60 border border-slate-800 transition flex items-center justify-between"
+                className="w-full text-left p-3 rounded-xl bg-slate-950 hover:bg-[#001c54]/60 border border-[#002466] transition flex items-center justify-between"
               >
                 <div>
                   <p className="font-bold text-white">Rotate Edge Nonce &amp; Keys</p>
@@ -322,7 +322,7 @@ export default function AdminPage() {
 
               <button
                 onClick={() => alert('Mail routing operational: Verified recipient info@akhilainfotech.com (9 AM – 6 PM IST)')}
-                className="w-full text-left p-3 rounded-xl bg-slate-950 hover:bg-slate-800/60 border border-slate-800 transition flex items-center justify-between"
+                className="w-full text-left p-3 rounded-xl bg-slate-950 hover:bg-[#001c54]/60 border border-[#002466] transition flex items-center justify-between"
               >
                 <div>
                   <p className="font-bold text-white">Test Mail Inbound Gateway</p>

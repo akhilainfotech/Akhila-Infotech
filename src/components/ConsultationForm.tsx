@@ -5,7 +5,6 @@ import {
   Mail,
   MapPin,
   Clock,
-  Lock,
   Send,
   CheckCircle2,
   Shield,
@@ -37,7 +36,6 @@ export default function ConsultationForm({
   const [scope, setScope] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [csrfToken, setCsrfToken] = useState('');
-  const [remainingQuota, setRemainingQuota] = useState(3);
 
   // Validation errors
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -53,7 +51,6 @@ export default function ConsultationForm({
 
   useEffect(() => {
     setCsrfToken(generateCsrfToken());
-    setRemainingQuota(getRemainingSubmissions());
   }, []);
 
   useEffect(() => {
@@ -114,7 +111,6 @@ export default function ConsultationForm({
 
     setIsSubmitting(true);
     recordSubmission();
-    setRemainingQuota(getRemainingSubmissions());
 
     const generatedRefId = 'AKH-2026-' + Math.floor(1000 + Math.random() * 9000);
     setRefId(generatedRefId);
@@ -203,37 +199,37 @@ Location: Akhila Infotech, Hyderabad, India`;
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-50 bg-grid-light">
+    <section id="contact" className="py-20 bg-gradient-to-b from-[#000d2e] via-[#001242] to-[#000e33] bg-grid-pattern border-b border-[#002466]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Info Block: Address & Timings */}
           <div className="lg:col-span-5 space-y-6">
-            <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#0f2147] bg-indigo-50 border border-indigo-200/60">
+            <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#00d2ff] bg-[#001c54]/90 border border-[#0055ff]/40">
               Advisory Desk
             </span>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               Connect With Our Senior IT Consultants
             </h2>
 
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed">
               Submit your technology objectives and system requirements. Inquiries dispatch directly to our advisory leads
-              at <strong className="text-[#0f2147]">info@akhilainfotech.com</strong>.
+              at <strong className="text-[#00d2ff]">info@akhilainfotech.com</strong>.
             </p>
 
             {/* Contact Cards */}
             <div className="space-y-4">
               {/* Official Email Card */}
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-between gap-3">
+              <div className="p-5 rounded-2xl bg-[#001552]/80 border border-[#002e8a]/80 shadow-md shadow-black/20 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-[#0f2147] text-white flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#001c54] text-[#00d2ff] border border-[#003899] flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-[11px] font-mono uppercase text-slate-500">Official Advisory Email</p>
+                    <p className="text-[11px] font-mono uppercase text-slate-400">Official Advisory Email</p>
                     <a
                       href="mailto:info@akhilainfotech.com"
-                      className="text-sm sm:text-base font-bold text-[#0f2147] hover:underline break-all sm:break-normal"
+                      className="text-sm sm:text-base font-bold text-[#38bdf8] hover:underline break-all sm:break-normal"
                     >
                       info@akhilainfotech.com
                     </a>
@@ -242,82 +238,55 @@ Location: Akhila Infotech, Hyderabad, India`;
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition whitespace-nowrap shrink-0"
+                  className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#001c54] hover:bg-[#002875] text-[#38bdf8] border border-[#003899] transition whitespace-nowrap shrink-0"
                 >
                   Copy
                 </button>
               </div>
 
               {/* Headquarters Address Card */}
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center shrink-0 mt-0.5">
+              <div className="p-5 rounded-2xl bg-[#001552]/80 border border-[#002e8a]/80 shadow-md shadow-black/20 flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-[#001c54] text-[#00d2ff] border border-[#003899] flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[11px] font-mono uppercase text-slate-500">Corporate Headquarters</p>
-                  <p className="text-sm font-bold text-slate-900">Akhila Infotech, Hyderabad, India</p>
-                  <p className="text-xs text-slate-500 mt-0.5">Principal Advisory &amp; Global Delivery Hub</p>
+                  <p className="text-[11px] font-mono uppercase text-slate-400">Corporate Headquarters</p>
+                  <p className="text-sm font-bold text-white">Akhila Infotech, Hyderabad, India</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Principal Advisory &amp; Global Delivery Hub</p>
                 </div>
               </div>
 
               {/* Office Hours Card */}
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-cyan-700 text-white flex items-center justify-center shrink-0 mt-0.5">
+              <div className="p-5 rounded-2xl bg-[#001552]/80 border border-[#002e8a]/80 shadow-md shadow-black/20 flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-[#001c54] text-[#00d2ff] border border-[#003899] flex items-center justify-center shrink-0 mt-0.5">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[11px] font-mono uppercase text-slate-500">Advisory &amp; Office Hours</p>
-                  <p className="text-sm font-bold text-slate-900">9:00 AM – 6:00 PM (IST)</p>
-                  <p className="text-xs text-slate-500 mt-0.5">Monday through Friday • Active SLA Coverage</p>
+                  <p className="text-[11px] font-mono uppercase text-slate-400">Advisory &amp; Office Hours</p>
+                  <p className="text-sm font-bold text-white">9:00 AM – 6:00 PM (IST)</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Monday through Friday • Active SLA Coverage</p>
                 </div>
-              </div>
-            </div>
-
-            {/* Active Security & Rate Limit Live Pill */}
-            <div className="p-4 rounded-xl bg-slate-900 text-slate-300 border border-slate-800 space-y-2">
-              <div className="flex items-center justify-between text-xs">
-                <span className="flex items-center gap-1.5 font-bold text-white">
-                  <Lock className="w-3.5 h-3.5 text-cyan-400" />
-                  Channel Encryption:
-                </span>
-                <span className="font-mono text-cyan-300">TLS 1.3 / AES-256</span>
-              </div>
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-slate-400">CSRF Nonce:</span>
-                <span className="font-mono text-[10px] text-slate-300">
-                  {csrfToken ? `${csrfToken.substring(0, 12)}...` : 'Generating...'}
-                </span>
-              </div>
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-slate-400">Submission Rate Window:</span>
-                <span
-                  className={`font-mono text-[11px] ${
-                    remainingQuota <= 0 ? 'text-red-400' : 'text-emerald-400'
-                  }`}
-                >
-                  {remainingQuota} Remaining
-                </span>
               </div>
             </div>
           </div>
 
           {/* Right: Validated & Sanitized Consultation Request Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl bg-white border border-slate-200 shadow-xl p-6 sm:p-9 relative">
+            <div className="rounded-2xl bg-[#001242]/95 border border-[#002e8a] shadow-2xl p-6 sm:p-9 relative backdrop-blur-xl shadow-blue-950/60">
               {!isSuccess ? (
                 <form onSubmit={handleSubmit} noValidate className="space-y-4">
-                  <div className="border-b border-slate-100 pb-3 mb-2 flex items-center justify-between">
+                  <div className="border-b border-[#002466] pb-3 mb-2 flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-slate-900">
+                      <h3 className="text-xl font-bold text-white">
                         Schedule Strategic Architecture Session
                       </h3>
-                      <p className="text-xs text-slate-500 mt-1">
+                      <p className="text-xs text-slate-400 mt-1">
                         Direct dispatch to{' '}
-                        <span className="font-semibold text-[#0f2147]">info@akhilainfotech.com</span> (9:00 AM – 6:00
+                        <span className="font-semibold text-[#00d2ff]">info@akhilainfotech.com</span> (9:00 AM – 6:00
                         PM IST)
                       </p>
                     </div>
-                    <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-cyan-100 text-cyan-800">
+                    <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-[#001c54] text-[#00d2ff] border border-[#003899]">
                       <Shield className="w-3 h-3" /> Protected
                     </span>
                   </div>
@@ -337,7 +306,7 @@ Location: Akhila Infotech, Hyderabad, India`;
                   {/* Name & Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="c-name" className="block text-xs font-bold uppercase text-slate-700 mb-1">
+                      <label htmlFor="c-name" className="block text-xs font-bold uppercase text-slate-200 font-semibold mb-1">
                         Full Name *
                       </label>
                       <input
@@ -347,14 +316,14 @@ Location: Akhila Infotech, Hyderabad, India`;
                         onChange={e => setName(e.target.value)}
                         maxLength={60}
                         placeholder="e.g. Anand Sharma"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0f2147] transition"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-400 focus:bg-[#001338] focus:outline-none focus:ring-2 focus:ring-[#0066ff] focus:border-[#00d2ff] transition"
                       />
                       {errors.name && (
                         <span className="text-[11px] font-medium text-red-600 mt-1 block">{errors.name}</span>
                       )}
                     </div>
                     <div>
-                      <label htmlFor="c-email" className="block text-xs font-bold uppercase text-slate-700 mb-1">
+                      <label htmlFor="c-email" className="block text-xs font-bold uppercase text-slate-200 font-semibold mb-1">
                         Work Email *
                       </label>
                       <input
@@ -364,7 +333,7 @@ Location: Akhila Infotech, Hyderabad, India`;
                         onChange={e => setEmail(e.target.value)}
                         maxLength={90}
                         placeholder="name@enterprise.com"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0f2147] transition"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-400 text-white focus:bg-[#001338] focus:outline-none focus:ring-2 focus:ring-[#0066ff] focus:border-[#00d2ff] transition"
                       />
                       {errors.email && (
                         <span className="text-[11px] font-medium text-red-600 mt-1 block">{errors.email}</span>
@@ -375,7 +344,7 @@ Location: Akhila Infotech, Hyderabad, India`;
                   {/* Company & Domain */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="c-company" className="block text-xs font-bold uppercase text-slate-700 mb-1">
+                      <label htmlFor="c-company" className="block text-xs font-bold uppercase text-slate-200 font-semibold mb-1">
                         Company / Organization *
                       </label>
                       <input
@@ -385,21 +354,21 @@ Location: Akhila Infotech, Hyderabad, India`;
                         onChange={e => setCompany(e.target.value)}
                         maxLength={80}
                         placeholder="e.g. Apex Global Corp"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0f2147] transition"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-400 text-white focus:bg-[#001338] focus:outline-none focus:ring-2 focus:ring-[#0066ff] focus:border-[#00d2ff] transition"
                       />
                       {errors.company && (
                         <span className="text-[11px] font-medium text-red-600 mt-1 block">{errors.company}</span>
                       )}
                     </div>
                     <div>
-                      <label htmlFor="c-domain" className="block text-xs font-bold uppercase text-slate-700 mb-1">
+                      <label htmlFor="c-domain" className="block text-xs font-bold uppercase text-slate-200 font-semibold mb-1">
                         Consulting Domain *
                       </label>
                       <select
                         id="c-domain"
                         value={domain}
                         onChange={e => setDomain(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0f2147] transition"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-400 text-white focus:bg-[#001338] focus:outline-none focus:ring-2 focus:ring-[#0066ff] focus:border-[#00d2ff] transition"
                       >
                         <option value="">Select consulting domain...</option>
                         <option value="Cloud Architecture & Migration">Cloud Architecture &amp; Migration</option>
@@ -417,14 +386,14 @@ Location: Akhila Infotech, Hyderabad, India`;
 
                   {/* Project Timeline */}
                   <div>
-                    <label htmlFor="c-timeline" className="block text-xs font-bold uppercase text-slate-700 mb-1">
+                    <label htmlFor="c-timeline" className="block text-xs font-bold uppercase text-slate-200 font-semibold mb-1">
                       Project Timeline *
                     </label>
                     <select
                       id="c-timeline"
                       value={timeline}
                       onChange={e => setTimeline(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0f2147] transition"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-400 text-white focus:bg-[#001338] focus:outline-none focus:ring-2 focus:ring-[#0066ff] focus:border-[#00d2ff] transition"
                     >
                       <option value="">Select expected timeline...</option>
                       <option value="Immediate (Next 30 Days)">Immediate (Next 30 Days)</option>
@@ -439,7 +408,7 @@ Location: Akhila Infotech, Hyderabad, India`;
 
                   {/* Project Scope / Requirements */}
                   <div>
-                    <label htmlFor="c-scope" className="block text-xs font-bold uppercase text-slate-700 mb-1">
+                    <label htmlFor="c-scope" className="block text-xs font-bold uppercase text-slate-200 font-semibold mb-1">
                       Project Scope / Requirements *
                     </label>
                     <textarea
@@ -449,7 +418,7 @@ Location: Akhila Infotech, Hyderabad, India`;
                       rows={4}
                       maxLength={1200}
                       placeholder="Summarize your architecture challenge, cloud providers, target compliance (SOC 2, ISO, HIPAA), or desired deliverables..."
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0f2147] transition"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-400 text-white focus:bg-[#001338] focus:outline-none focus:ring-2 focus:ring-[#0066ff] focus:border-[#00d2ff] transition"
                     />
                     <div className="flex justify-between items-center text-[10px] text-slate-400 mt-0.5">
                       {errors.scope ? (
@@ -465,7 +434,7 @@ Location: Akhila Infotech, Hyderabad, India`;
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#0f2147] via-blue-900 to-cyan-700 hover:opacity-95 shadow-lg shadow-[#0f2147]/20 transition disabled:opacity-70"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#0055ff] via-[#0077ff] to-[#00b4ff] hover:opacity-95 shadow-lg shadow-[#0052cc]/25 transition disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <>
@@ -488,32 +457,32 @@ Location: Akhila Infotech, Hyderabad, India`;
                   </div>
                   <div>
                     <div className="flex items-center justify-center gap-2 mb-1">
-                      <span className="text-xs font-mono px-3 py-1 rounded bg-slate-100 text-[#0f2147] font-semibold">
+                      <span className="text-xs font-mono px-3 py-1 rounded bg-[#001038] text-[#00d2ff] border border-[#002466] font-semibold">
                         REF: {refId}
                       </span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800/60">
                         Checksum Verified
                       </span>
                     </div>
-                    <h4 className="text-xl font-extrabold text-slate-900 mt-2">
+                    <h4 className="text-xl font-extrabold text-white mt-2">
                       Consultation Request Dispatched!
                     </h4>
-                    <p className="text-xs text-slate-600 max-w-md mx-auto mt-1 leading-relaxed">
+                    <p className="text-xs text-slate-300 max-w-md mx-auto mt-1 leading-relaxed">
                       Thank you, <strong>{name}</strong>. Your {domain} inquiry for <strong>{company}</strong> has
                       been routed to <strong>info@akhilainfotech.com</strong>. Our Hyderabad advisory desk responds
                       during operational hours (9:00 AM – 6:00 PM IST).
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 max-w-md mx-auto text-left space-y-2">
-                    <p className="text-[11px] font-bold uppercase text-slate-700">Direct Email Client Fallbacks</p>
-                    <p className="text-[11px] text-slate-500">
+                  <div className="p-4 rounded-xl bg-[#000d2b] border border-[#002e8a] max-w-md mx-auto text-left space-y-2">
+                    <p className="text-[11px] font-bold uppercase text-slate-200">Direct Email Client Fallbacks</p>
+                    <p className="text-[11px] text-slate-400">
                       If your browser prevents automated dispatch, send the pre-filled inquiry using either link below:
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
                       <a
                         href={mailtoUrl}
-                        className="text-center py-2 px-3 rounded-lg text-xs font-bold bg-[#0f2147] text-white hover:bg-slate-900 transition whitespace-nowrap"
+                        className="text-center py-2 px-3 rounded-lg text-xs font-bold bg-gradient-to-r from-[#0055ff] to-[#0099ff] hover:from-[#0044ee] hover:to-[#0088ee] text-white transition whitespace-nowrap"
                       >
                         Open Email Client
                       </a>
@@ -521,7 +490,7 @@ Location: Akhila Infotech, Hyderabad, India`;
                         href={gmailUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-center py-2 px-3 rounded-lg text-xs font-bold bg-white text-slate-800 border border-slate-300 hover:bg-slate-100 transition whitespace-nowrap"
+                        className="text-center py-2 px-3 rounded-lg text-xs font-bold bg-[#001c54] text-[#00d2ff] border border-[#003899] hover:bg-[#002875] hover:text-white transition whitespace-nowrap"
                       >
                         Send via Gmail Web
                       </a>
@@ -531,7 +500,7 @@ Location: Akhila Infotech, Hyderabad, India`;
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="text-xs font-semibold text-[#0f2147] hover:underline"
+                    className="text-xs font-semibold text-[#00d2ff] hover:underline"
                   >
                     Submit Another Consultation Request
                   </button>

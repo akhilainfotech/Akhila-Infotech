@@ -88,16 +88,16 @@ export default function ServicesSection({
   ];
 
   return (
-    <section id="services" className="py-20 bg-slate-50 bg-grid-light border-b border-slate-200">
+    <section id="services" className="py-20 bg-[#000d2e] bg-grid-light border-b border-[#002466]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#0f2147] bg-indigo-50 border border-indigo-200/60 mb-3 whitespace-nowrap">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#00d2ff] bg-[#001c54]/90 border border-[#0055ff]/40 mb-3 whitespace-nowrap">
             Capabilities &amp; Advisory
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Comprehensive Enterprise IT Consulting Services
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Tailored engineering blueprints and advisory designed to resolve scale bottlenecks, modernize legacy debt, and accelerate enterprise velocity.
           </p>
         </div>
@@ -109,28 +109,28 @@ export default function ServicesSection({
             return (
               <div
                 key={svc.key}
-                className="rounded-2xl bg-white p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-indigo-400 transition-all flex flex-col justify-between group"
+                className="rounded-2xl bg-[#001552]/80 p-6 sm:p-7 border border-[#002e8a]/80 shadow-lg shadow-black/20 backdrop-blur-sm hover:shadow-xl hover:border-[#0066ff]/50 hover:shadow-blue-500/10 transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-indigo-50 text-[#0f2147] group-hover:bg-[#0f2147] group-hover:text-white transition-colors flex items-center justify-center mb-5 shrink-0 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-[#001c54] text-[#00d2ff] group-hover:bg-[#0066ff] group-hover:text-white border border-[#003899] transition-colors flex items-center justify-center mb-5 shrink-0 shadow-sm">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900">{svc.title}</h3>
-                  <p className="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">{svc.desc}</p>
-                  <ul className="mt-4 space-y-2 text-xs text-slate-700">
+                  <h3 className="text-lg font-bold text-white">{svc.title}</h3>
+                  <p className="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">{svc.desc}</p>
+                  <ul className="mt-4 space-y-2 text-xs text-slate-200">
                     {svc.bullets.map((b, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00b4ff] mt-1.5 shrink-0" />
                         <span>{b}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-[#002466] flex items-center justify-between">
                   <button
                     type="button"
                     onClick={() => onOpenBlueprint(svc.key)}
-                    className="text-xs font-bold text-[#0f2147] hover:text-indigo-600 inline-flex items-center gap-1 transition whitespace-nowrap"
+                    className="text-xs font-bold text-[#38bdf8] hover:text-white inline-flex items-center gap-1 transition whitespace-nowrap"
                   >
                     <span>View Blueprint</span>
                     <ExternalLink className="w-3.5 h-3.5 shrink-0" />
@@ -138,7 +138,7 @@ export default function ServicesSection({
                   <button
                     type="button"
                     onClick={() => onSelectDomain(svc.formDomain)}
-                    className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-indigo-50 text-[#0f2147] hover:bg-indigo-100 transition whitespace-nowrap"
+                    className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-[#001c54] text-[#38bdf8] hover:bg-[#0066ff] hover:text-white border border-[#003899] transition whitespace-nowrap"
                   >
                     Select →
                   </button>

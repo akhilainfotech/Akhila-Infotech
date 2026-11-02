@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#0f2147',
+  themeColor: '#000d2e',
   width: 'device-width',
   initialScale: 1,
 };
@@ -64,7 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased text-slate-800 bg-white overflow-x-hidden selection:bg-[#0f2147] selection:text-white">
+      <body className="font-sans antialiased text-slate-100 bg-[#000d2e] overflow-x-hidden selection:bg-[#0052cc] selection:text-white">
         <ToastProvider>{children}</ToastProvider>
       </body>
     </html>

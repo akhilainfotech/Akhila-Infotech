@@ -33,10 +33,10 @@ export default function Methodology() {
   ];
 
   return (
-    <section id="methodology" className="py-20 bg-[#070f24] text-white relative">
+    <section id="methodology" className="py-20 bg-gradient-to-b from-[#000e33] via-[#001242] to-[#000d2e] border-b border-[#002466] text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 mb-3">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#38bdf8] bg-[#0052cc]/20 border border-[#0066ff]/40 mb-3">
             Governance &amp; Delivery
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
@@ -51,19 +51,19 @@ export default function Methodology() {
           {steps.map(step => (
             <div
               key={step.num}
-              className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between hover:border-cyan-500/40 transition"
+              className="p-6 rounded-2xl bg-[#001338]/90 border border-[#002b80] flex flex-col justify-between hover:border-[#00b4ff]/50 hover:shadow-lg hover:shadow-[#0052cc]/15 transition"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-3xl font-extrabold text-cyan-400">{step.num}</span>
-                  <span className="text-[11px] font-mono uppercase bg-slate-800 text-slate-300 px-2.5 py-1 rounded">
+                  <span className="font-mono text-3xl font-extrabold text-[#00d2ff]">{step.num}</span>
+                  <span className="text-[11px] font-mono uppercase bg-[#001c54] text-[#93c5fd] px-2.5 py-1 rounded">
                     {step.timing}
                   </span>
                 </div>
                 <h3 className="text-lg font-bold text-white">{step.title}</h3>
                 <p className="mt-2 text-xs text-slate-300 leading-relaxed">{step.desc}</p>
               </div>
-              <p className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-cyan-300 font-mono">
+              <p className="mt-4 pt-3 border-t border-[#002466] text-[11px] text-[#38bdf8] font-mono">
                 Output: {step.output}
               </p>
             </div>

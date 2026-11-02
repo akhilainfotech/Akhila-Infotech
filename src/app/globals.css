@@ -13,28 +13,28 @@ html {
 
 body {
   font-family: var(--font-inter);
-  color: #1e293b;
-  background-color: #ffffff;
+  color: #f1f5f9;
+  background-color: #000d2e;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: #0f2147;
+  background-color: #0066ff;
   color: #ffffff;
 }
 
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 180, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 180, 255, 0.08) 1px, transparent 1px);
 }
 
 .bg-grid-light {
-  background-size: 32px 32px;
+  background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(15, 33, 71, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 33, 71, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 102, 255, 0.08) 1px, transparent 1px);
 }
 
 /* Hide anti-bot honeypot field */

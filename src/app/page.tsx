@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import SecurityFeatures from '@/components/SecurityFeatures';
@@ -16,6 +15,7 @@ import SecurityPortalModal from '@/components/modals/SecurityPortalModal';
 import BlueprintModal from '@/components/modals/BlueprintModal';
 import AuditModal from '@/components/modals/AuditModal';
 import AdminModal from '@/components/modals/AdminModal';
+import WebmailPromptModal from '@/components/modals/WebmailPromptModal';
 import { useToast } from '@/lib/toast-context';
 
 export default function Home() {
@@ -25,6 +25,7 @@ export default function Home() {
   const [blueprintKey, setBlueprintKey] = useState<string | null>(null);
   const [auditModalOpen, setAuditModalOpen] = useState(false);
   const [adminModalOpen, setAdminModalOpen] = useState(false);
+  const [webmailPromptOpen, setWebmailPromptOpen] = useState(false);
 
   // Consultation pre-fill state
   const [selectedDomain, setSelectedDomain] = useState<string>('');
@@ -51,18 +52,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
-      {/* Top Announcement Bar */}
-      <TopBar
-        onOpenEmailCheck={handleOpenEmailCheck}
-        onOpenAdmin={() => setAdminModalOpen(true)}
-      />
-
+    <div className="min-h-screen flex flex-col bg-[#000d2e]">
       {/* Sticky Navigation */}
       <Navbar
         onOpenPortalLogin={handleOpenPortalLogin}
         onOpenEmailCheck={handleOpenEmailCheck}
         onOpenAdmin={() => setAdminModalOpen(true)}
+        onOpenWebmailPrompt={() => setWebmailPromptOpen(true)}
       />
 
       {/* Main Content */}
@@ -105,6 +101,11 @@ export default function Home() {
       />
 
       {/* Interactive Modals */}
+      <WebmailPromptModal
+        isOpen={webmailPromptOpen}
+        onClose={() => setWebmailPromptOpen(false)}
+      />
+
       <SecurityPortalModal
         isOpen={securityModalOpen}
         initialTab={securityModalTab}
