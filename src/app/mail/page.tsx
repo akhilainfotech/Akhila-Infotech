@@ -158,10 +158,10 @@ export default function WebmailLoginPage() {
                       id="wm-email"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
-                      placeholder="akhilatechnology@gmail.com"
+                      placeholder="Enter email address"
                       required
                       autoComplete="username email"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-400 focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-500 focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
                     />
                     <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                   </div>
@@ -178,10 +178,10 @@ export default function WebmailLoginPage() {
                       id="wm-phone"
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
-                      placeholder="+919440539009"
+                      placeholder="Enter mobile number"
                       required
                       autoComplete="tel"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-400 focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#000d2b] border border-[#002e8a] text-sm text-white placeholder-slate-500 focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
                     />
                     <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                   </div>

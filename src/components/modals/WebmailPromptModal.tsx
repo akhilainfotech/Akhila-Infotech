@@ -158,8 +158,8 @@ export default function WebmailPromptModal({ isOpen, onClose }: WebmailPromptMod
                 required
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                placeholder="akhilatechnology@gmail.com"
-                className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-xs font-mono text-white placeholder-slate-400 focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
+                placeholder="Enter email address"
+                className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-xs font-mono text-white placeholder-slate-500 focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
               />
               <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
@@ -176,8 +176,8 @@ export default function WebmailPromptModal({ isOpen, onClose }: WebmailPromptMod
                 required
                 value={phone}
                 onChange={e => setPhone(e.target.value)}
-                placeholder="+919440539009"
-                className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-xs font-mono text-white placeholder-slate-400 focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
+                placeholder="Enter mobile number"
+                className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#000d2b] border border-[#002e8a] text-xs font-mono text-white placeholder-slate-500 focus:bg-[#001338] focus:border-[#00d2ff] focus:outline-none focus:ring-2 focus:ring-[#0066ff] transition"
               />
               <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
